@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .card-container {
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid blue;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .like-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            color: red;
+            z-index: 1;
+        }
+
+        .menu-icon {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 0px 12px;
+            cursor: pointer;
+        }
+
+        #btn-one {
+            background-color: blue;
+            font-size: 15px;
+            border: none;
+            color: #fff;
+
+        }
+
+        #btn-two {
+            background-color: #fff;
+            font-size: 15px;
+            border: 2px solid blue;
+            color: #000;
+
+        }
+
+        .social-icons {
+            font-size: 30px;
+            color: #000;
+
+        }
+
+        .social-icons>a {
+            font-style: normal;
+            color: #000;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+       
+        <div class="like-button" id="like-button">
+            <i class="fas fa-heart"></i>
+        </div>
+
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+
+    
+        <div class="content">
+            <img src="capture.JPG" alt="User Photo" width="100%">
+            <h2>Anita Mondol</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, dolore?</p>
+            <h3>Contact</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="horizontal-line"></div>
+            <hr>
+            <div class="buttons">
+                <button id="btn-one">Contract me</button>
+                <button id="btn-two">Hire me</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const likeButton = document.getElementById('like-button');
+        let isLiked = false;
+
+        likeButton.addEventListener('click', () => {
+            isLiked = !isLiked;
+            const heartIcon = likeButton.querySelector('i');
+            heartIcon.classList.toggle('fas');
+            heartIcon.classList.toggle('far');
+            likeButton.style.color = isLiked ? 'red' : '';
+        });
+
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuIcon.addEventListener('click', () => {
+            alert('Hamburger menu clicked!');
+        });
+    </script>
+</body>
+
+</html>
